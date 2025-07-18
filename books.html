@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book List | Bookoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .sort-container {
+      margin-bottom: 20px;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .book-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-card img {
+      height: 150px;
+      width: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 30px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Bookoria Library</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a> |
+      <a href="books.html" class="nav-link">Books</a> |
+      <a href="about.html" class="nav-link">About</a> |
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span id="auth-links" style="float: right; margin-left: 20px;"></span>
+    </nav>
+  </header>
+
+  <main>
+    <input type="text" id="searchInput" placeholder="Search by title or author..." />
+
+    <div class="sort-container">
+      <label for="sortSelect">Sort by:</label>
+      <select id="sortSelect">
+        <option value="az">A to Z</option>
+        <option value="za">Z to A</option>
+      </select>
+    </div>
+
+    <div id="bookList" class="book-grid">
+      <!-- Book cards will be rendered here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bookoria. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let allBooks = [];
+
+    function renderBooks(filteredBooks) {
+      const bookList = document.getElementById('bookList');
+      bookList.innerHTML = '';
+      filteredBooks.forEach(book => {
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = `
+          <a href="book.html?id=${book.id}" class="book-link">
+            <img src="${book.cover}" alt="${book.title}" />
+            <h3>${book.title}</h3>
+            <p><em>${book.author}</em></p>
+          </a>
+        `;
+        bookList.appendChild(card);
+      });
+    }
+
+    function sortBooks(books, method) {
+      return books.slice().sort((a, b) => {
+        if (method === 'az') {
+          return a.title.localeCompare(b.title);
+        } else {
+          return b.title.localeCompare(a.title);
+        }
+      });
+    }
+
+    fetch('books.json')
+      .then(response => response.json())
+      .then(books => {
+        allBooks = books;
+
+        const searchInput = document.getElementById('searchInput');
+        const sortSelect = document.getElementById('sortSelect');
+
+        function updateDisplayedBooks() {
+          const keyword = searchInput.value.toLowerCase();
+          const filtered = allBooks.filter(book =>
+            book.title.toLowerCase().includes(keyword) ||
+            book.author.toLowerCase().includes(keyword)
+          );
+          const sorted = sortBooks(filtered, sortSelect.value);
+          renderBooks(sorted);
+        }
+
+        searchInput.addEventListener('input', updateDisplayedBooks);
+        sortSelect.addEventListener('change', updateDisplayedBooks);
+
+        updateDisplayedBooks(); // initial display
+      })
+      .catch(error => {
+        document.getElementById('bookList').innerHTML = "<p>Failed to load books.</p>";
+        console.error(error);
+      });
+  </script>
+
+  <script>
+    // Highlight the current nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

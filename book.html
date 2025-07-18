@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Details</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Bookoria Library</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a> |
+      <a href="books.html" class="nav-link">Books</a> |
+      <a href="about.html" class="nav-link">About</a> |
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span id="auth-links" style="float: right; margin-left: 20px;"></span>
+    </nav>
+  </header>
+
+
+  <main class="container">
+    <div id="bookDetail" class="book-detail"></div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const bookId = params.get("id");
+
+    fetch("books.json")
+      .then(res => res.json())
+      .then(data => {
+        const book = data.find(b => b.id.toString() === bookId);
+        if (!book) {
+          document.getElementById("bookDetail").innerHTML = "<p>Book not found.</p>";
+          return;
+        }
+
+        document.getElementById("bookDetail").innerHTML = `
+          <img src="${book.cover}" alt="${book.title}" class="detail-cover" z/>
+          <div class="detail-info">
+            <h2>${book.title}</h2>
+            <p><strong>Author:</strong> ${book.author}</p>
+            <p><strong>Language:</strong> ${book.language || "Unknown"}</p>
+            <p><strong>Year:</strong> ${book.year || "Unknown"}</p>
+            <p><strong>Genre:</strong> ${book.genre || "N/A"}</p>
+            <p><strong>Description:</strong> ${book.description || "No description available."}</p>
+            <button id="borrowBtn">Borrow this book</button>
+            <button id="favBtn">❤️ Save to Favorites</button>
+            <a href="books.html" class="back-button">← Back to list</a>
+          </div>
+        `;
+      });
+    
+    document.getElementById('borrowBtn').addEventListener('click', () => {
+        const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!currentUser) {
+            alert("Please log in to borrow books.");
+            window.location.href = 'login.html';
+            return;
+        }
+
+    const borrowedBooks = JSON.parse(localStorage.getItem('borrowedBooks')) || [];
+    borrowedBooks.push({ user: currentUser.username, bookId: book.id, title: book.title });
+    localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+    alert(`You borrowed "${book.title}"`);
+});
+
+    document.getElementById('favBtn').addEventListener('click', () => {
+        const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!currentUser) {
+            alert("Please log in to favorite books.");
+            return;
+        }
+
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.push({ user: currentUser.username, bookId: book.id });
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    alert("Added to favorites!");
+});
+
+      
+  </script>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

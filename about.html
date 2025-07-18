@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Bookoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 30px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Bookoria Library</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a> |
+      <a href="books.html" class="nav-link">Books</a> |
+      <a href="about.html" class="nav-link">About</a> |
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span id="auth-links" style="float: right; margin-left: 20px;"></span>
+    </nav>
+
+  </header>
+
+  <main>
+    <h2>About Bookoria</h2>
+    <p>
+      Bookoria is a simple digital library system designed to make reading easier and more accessible
+      for everyone. Whether you're looking for popular international bestsellers or inspiring Indonesian literature,
+      Bookoria lets you browse, search, and manage books efficiently.
+    </p>
+    <p>
+      This project was created as a beginner-friendly web development exercise to practice HTML, CSS,
+      JavaScript, and JSON data handling. It also supports user login and book management features.
+    </p>
+    <p>
+      We aim to grow this platform into a more complete digital library system that supports user borrowing,
+      personalized recommendations, and more.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bookoria. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Highlight the current nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

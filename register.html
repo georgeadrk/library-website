@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Bookoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 30px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Bookoria Library</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a> |
+      <a href="books.html" class="nav-link">Books</a> |
+      <a href="about.html" class="nav-link">About</a> |
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span id="auth-links" style="float: right; margin-left: 20px;"></span>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Create an Account</h2>
+    <form id="registerForm">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="password" name="confirm" placeholder="Confirm Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <p id="message"></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bookoria. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = form.username.value.trim();
+      const email = form.email.value.trim();
+      const password = form.password.value;
+      const confirm = form.confirm.value;
+
+      if (password !== confirm) {
+        message.textContent = "Passwords do not match.";
+        message.style.color = "red";
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("bookoria_users") || "[]");
+
+      if (users.some(u => u.email === email)) {
+        message.textContent = "Email is already registered.";
+        message.style.color = "red";
+        return;
+      }
+
+      users.push({ username, email, password });
+      localStorage.setItem("bookoria_users", JSON.stringify(users));
+
+      message.textContent = "Registration successful! You can now log in.";
+      message.style.color = "green";
+      form.reset();
+    });
+  </script>
+
+  <script>
+    // Highlight the current nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

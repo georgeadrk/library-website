@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "language": "English",
+    "year": 2018,
+    "genre": "Self-Help",
+    "description": "Atomic Habits, by James Clear, is a self-help book that focuses on the power of small, incremental changes in building good habits and breaking bad ones. The core concept revolves around the idea that tiny changes, consistently applied, can lead to remarkable results over time, much like the compounding effect of interest. The book provides a framework with actionable strategies and practical advice for habit formation, emphasizing the importance of systems over goals.",
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 2,
+    "title": "Negeri 5 Menara",
+    "author": "Ahmad Fuadi",
+    "language": "Indonesian",
+    "year": 2009,
+    "genre": "Fiction",
+    "description": "Novel Negeri 5 Menara karya Ahmad Fuadi menceritakan kisah perjalanan Alif, seorang santri dari Maninjau, Sumatera Barat, yang menuntut ilmu di Pondok Madani, Ponorogo, Jawa Timur. Di pesantren, Alif bersama lima temannya, yang dikenal sebagai 'Sahibul Menara', memiliki kebiasaan berkumpul di bawah menara masjid sambil membayangkan impian mereka. Novel ini menyoroti perjuangan mereka meraih cita-cita, persahabatan, dan nilai-nilai kehidupan di pesantren.",
+    "cover": "assets/img/book_2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Cantik Itu Luka",
+    "author": "Eka Kurniawan",
+    "language": "Indonesian",
+    "year": 2002,
+    "genre": "Literary Fiction",
+    "description": "Novel Cantik itu Luka karya Eka Kurniawan adalah sebuah karya sastra bergenre realisme magis yang menceritakan kisah keluarga dengan latar belakang sejarah Indonesia, terutama pada masa kolonial dan pasca-kemerdekaan. Novel ini menyoroti tema-tema seperti kecantikan, kekerasan, cinta, sejarah, dan mitos, dengan gaya penceritaan yang unik dan menggabungkan unsur-unsur surealisme.",
+    "cover": "assets/img/book_3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Mulai Mengerti",
+    "author": "Edward Suhadi",
+    "language": "Indonesian",
+    "year": 2022,
+    "genre": "Motivational",
+    "description": "Buku ini berisi kumpulan tulisan pendek yang lahir dari kegelisahan dan pengamatan sehari-hari. Isinya tentang pemahaman bahwa hidup, meskipun terlihat acak dan tidak teratur, sebenarnya memiliki makna dan keteraturan tersendiri. Buku ini diterbitkan pada 1 Desember 2022.",
+    "cover": "assets/img/book_4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Ayat-Ayat Cinta",
+    "author": "Habiburrahman El Shirazy",
+    "language": "Indonesian",
+    "year": 2004,
+    "genre": "Romance",
+    "description": "Novel Ayat-Ayat Cinta karya Habiburrahman El Shirazy menceritakan kisah cinta Fahri, seorang mahasiswa Indonesia di Kairo, yang dibalut dengan nilai-nilai Islami. Novel ini menyoroti bagaimana Fahri menghadapi berbagai ujian dalam percintaannya dengan latar belakang kehidupan di Mesir, serta bagaimana ia menjunjung tinggi nilai-nilai agama dalam setiap tindakannya.",
+    "cover": "assets/img/book_5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Educated",
+    "author": "Tara Westover",
+    "language": "English",
+    "year": 2018,
+    "genre": "Biography",
+    "description": "Educated is a powerful memoir by Tara Westover that chronicles her journey from a survivalist Mormon family in rural Idaho to earning a PhD from Cambridge University. The book explores themes of identity, family, and the transformative power of education. Westover's upbringing was marked by isolation, with no formal schooling and limited exposure to the outside world. She recounts her struggle to reconcile her desire for knowledge with the beliefs and values of her family.",
+    "cover": "assets/img/book_6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Pulang",
+    "author": "Toha Mohtar",
+    "language": "Indonesian",
+    "year": 2012,
+    "genre": "Historical Fiction",
+    "description": "Pulang merupakan salah satu novel sastra karya Toha Mohtar. Novel ini menceritakan seorang anak manusia yang bernama Tamin yang pulang ke kampung halamannya setelah tujuh tahun pergi meninggalkan kampung halamannya untuk menjadi heiho. Di awal novel ini digambarkan tentang ingatan masa lalu Tamin akan masa kecilnya.",
+    "cover": "assets/img/book_7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Filosofi Teras",
+    "author": "Henry Manampiring",
+    "language": "Indonesian",
+    "year": 2018,
+    "genre": "Philosophy",
+    "description": "Filosofi Teras adalah buku yang ditulis oleh Henry Manampiring yang memperkenalkan filsafat Stoicisme dan bagaimana menerapkannya dalam kehidupan sehari-hari, terutama untuk menghadapi emosi negatif dan membangun ketahanan mental. Buku ini bertujuan membantu pembaca, terutama generasi muda, dalam menghadapi tantangan dan kecemasan hidup dengan lebih tenang dan bijaksana.",
+    "cover": "assets/img/book_8.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Final Empire",
+    "author": "Brandon Sanderson",
+    "language": "English",
+    "year": 2006,
+    "genre": "Fantasy",
+    "description": "The Final Empire is the first novel in Brandon Sanderson's Mistborn trilogy, set in a dystopian world where an immortal tyrant known as the Lord Ruler has ruled for a thousand years. The story follows a group of rebels, led by the charismatic Kelsier and his apprentice Vin, who attempt to overthrow the Lord Ruler and his oppressive regime. The novel introduces a unique magic system called Allomancy, where individuals can gain supernatural abilities by consuming and burning metals.",
+    "cover": "assets/img/book_9.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Digital Fortress",
+    "author": "Dan Brown",
+    "language": "English",
+    "year": 1998,
+    "genre": "Thriller",
+    "description": "Digital Fortress is a techno-thriller novel by Dan Brown, published in 1998, that explores themes of government surveillance, cryptography, and the ethical implications of technology. The story revolves around the NSA's supercomputer, TRANSLTR, encountering a seemingly unbreakable code called Digital Fortress, created by a former NSA employee, Ensei Tankado. Tankado's code threatens to expose the NSA's surveillance activities, leading to a race against time to crack the code and prevent a major security breach.",
+    "cover": "assets/img/book_10.jpg"
+  }
+]
