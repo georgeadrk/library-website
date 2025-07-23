@@ -83,12 +83,13 @@
 <body>
 
   <header>
-    <h1>📚 Bookoria Library</h1>
+    <h1 data-i18n="title">📚 Bookoria Library</h1>
     <nav>
-      <a href="index.html" class="nav-link">Home</a> |
-      <a href="books.html" class="nav-link">Books</a> |
-      <a href="about.html" class="nav-link">About</a> |
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="index.html" class="nav-link" data-i18n="nav_main">Home</a> |
+      <a href="books.html" class="nav-link" data-i18n="nav_books">Books</a> |
+      <a href="about.html" class="nav-link" data-i18n="nav_about">About</a> |
+      <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      <button id="lang-toggle" class="lang-button">English</button>
       <span id="auth-links" style="float: right; margin-left: 20px;"></span>
     </nav>
   </header>
@@ -156,6 +157,46 @@
       }
     });
   </script>
+
+  <script>
+  const translations = {
+    en: {
+      title: "📚 Bookoria Library",
+      nav_books: "Books",
+      nav_main: "Home",
+      nav_about: "About",
+      nav_contact: "Contact",
+    },
+    id: {
+      title: "📚 Perpustakaan Bookoria",
+      nav_books: "Buku",
+      nav_main: "Beranda",
+      nav_about: "Tentang",
+      nav_contact: "Kontak",
+    }
+  };
+
+  let currentLang = "en";
+
+  function updateLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      el.textContent = translations[lang][key];
+    });
+
+    document.getElementById("lang-toggle").textContent = lang === "en" ? "Bahasa Indonesia" : "English";
+    currentLang = lang;
+  }
+
+  document.getElementById("lang-toggle").addEventListener("click", () => {
+    const newLang = currentLang === "en" ? "id" : "en";
+    updateLanguage(newLang);
+  });
+
+  // Initial language setup
+  updateLanguage(currentLang);
+</script>
+
   <script src="js/script.js"></script>
 
 </body>

@@ -169,7 +169,7 @@ form {
 }
 
 .back-button:hover {
-  color: goldenrod;
+  color: #ffc107;
   border-bottom: 2px solid goldenrod;
 }
 
@@ -180,7 +180,7 @@ form {
 }
 
 #auth-links a:hover {
-  color: gold;
+  color: #ffc107;
   text-decoration: underline;
 }
 
@@ -213,4 +213,25 @@ form {
 #sortSelect {
   padding: 6px 10px;
   font-size: 14px;
+}
+
+.lang-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 1em;
+  padding: 0.5em 1em;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+.lang-button:hover {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+  transform: scale(1.1);
+  color: #ffc107;
+  text-decoration: underline;
 }
