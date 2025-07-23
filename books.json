@@ -234,30 +234,30 @@
       "id": "Panduan Lima Jari adalah sebuah buku dan juga konsep yang dikembangkan oleh Edward Suhadi yang menggunakan analogi lima jari tangan untuk merepresentasikan prinsip-prinsip panduan hidup. Buku ini, yang merupakan kumpulan tulisan dari berbagai kanal Edward, mengelompokkan cerita-cerita berdasarkan nilai-nilai yang diwakili oleh masing-masing jari."
     },
     "bookLanguage": {
-      "en": "",
-      "id": ""
+      "en": "Indonesian",
+      "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_12.jpg"
   },
   {
     "id": 13,
     "title": {
-      "en": "",
-      "id": ""
+      "en": "The Art of War",
+      "id": "Seni Perang"
     },
     "author": {
-      "en": "",
-      "id": ""
+      "en": "Sun Tzu",
+      "id": "Sun Tzu"
     },
     "description": {
-      "en": "",
-      "id": ""
+      "en": "The Art of War is a timeless military treatise written by the ancient Chinese strategist Sun Tzu (or Sunzi). It is a collection of 13 chapters, each focusing on different aspects of warfare, strategy, and leadership. While rooted in military strategy, its principles have been widely applied to various fields like business, politics, and personal development.",
+      "id": "Seni Perang adalah risalah militer abadi yang ditulis oleh ahli strategi Tiongkok kuno, Sun Tzu (atau Sunzi). Buku ini terdiri dari 13 bab, yang masing-masing berfokus pada berbagai aspek peperangan, strategi, dan kepemimpinan. Meskipun berakar pada strategi militer, prinsip-prinsipnya telah diterapkan secara luas di berbagai bidang seperti bisnis, politik, dan pengembangan pribadi."
     },
     "bookLanguage": {
-      "en": "",
-      "id": ""
+      "en": "English",
+      "id": "Bahasa Inggris"
     },
-    "cover": "assets/img/book_1.png"
+    "cover": "assets/img/book_13.jpg"
   },
   {
     "id": 14,
