@@ -1,102 +1,202 @@
 [
   {
     "id": 1,
-    "title": "Atomic Habits",
-    "author": "James Clear",
-    "language": "English",
-    "year": 2018,
-    "genre": "Self-Help",
-    "description": "Atomic Habits, by James Clear, is a self-help book that focuses on the power of small, incremental changes in building good habits and breaking bad ones. The core concept revolves around the idea that tiny changes, consistently applied, can lead to remarkable results over time, much like the compounding effect of interest. The book provides a framework with actionable strategies and practical advice for habit formation, emphasizing the importance of systems over goals.",
+    "title": {
+      "en": "Atomic Habits",
+      "id": "Kebiasaan Atom"
+    },
+    "author": {
+      "en": "James Clear",
+      "id": "James Clear"
+    },
+    "description": {
+      "en": "Atomic Habits, by James Clear, is a self-help book that focuses on the power of small, incremental changes in building good habits and breaking bad ones. The core concept revolves around the idea that tiny changes, consistently applied, can lead to remarkable results over time, much like the compounding effect of interest. The book provides a framework with actionable strategies and practical advice for habit formation, emphasizing the importance of systems over goals.",
+      "id": "Atomic Habits, karya James Clear, adalah buku pengembangan diri yang berfokus pada kekuatan perubahan kecil dan bertahap dalam membangun kebiasaan baik dan menghentikan kebiasaan buruk. Konsep intinya berpusat pada gagasan bahwa perubahan kecil, jika diterapkan secara konsisten, dapat menghasilkan hasil yang luar biasa seiring waktu, mirip dengan efek bunga majemuk. Buku ini menyediakan kerangka kerja dengan strategi yang dapat ditindaklanjuti dan saran praktis untuk pembentukan kebiasaan, yang menekankan pentingnya sistem di atas tujuan."
+    },
+    "bookLanguage": {
+      "en": "English",
+      "id": "Bahasa Inggris"
+    },
     "cover": "assets/img/book_1.png"
   },
   {
     "id": 2,
-    "title": "Negeri 5 Menara",
-    "author": "Ahmad Fuadi",
-    "language": "Bahasa Indonesia",
-    "year": 2009,
-    "genre": "Fiction",
-    "description": "Novel Negeri 5 Menara karya Ahmad Fuadi menceritakan kisah perjalanan Alif, seorang santri dari Maninjau, Sumatera Barat, yang menuntut ilmu di Pondok Madani, Ponorogo, Jawa Timur. Di pesantren, Alif bersama lima temannya, yang dikenal sebagai 'Sahibul Menara', memiliki kebiasaan berkumpul di bawah menara masjid sambil membayangkan impian mereka. Novel ini menyoroti perjuangan mereka meraih cita-cita, persahabatan, dan nilai-nilai kehidupan di pesantren.",
+    "title": {
+      "en": "The Land of Five Towers",
+      "id": "Negeri 5 Menara"
+    },
+    "author": {
+      "en": "Ahmad Fuadi",
+      "id": "Ahmad Fuadi"
+    },
+    "description": {
+      "en": "The novel tells the story of Alif, a student from West Sumatra who studies at a pesantren (Islamic boarding school) in East Java, where he and his friends gather beneath a tower and dream of the future.",
+      "id": "Novel Negeri 5 Menara karya Ahmad Fuadi menceritakan kisah perjalanan Alif, seorang santri dari Maninjau, Sumatera Barat, yang menuntut ilmu di Pondok Madani, Ponorogo, Jawa Timur. Di pesantren, Alif bersama lima temannya, yang dikenal sebagai 'Sahibul Menara', memiliki kebiasaan berkumpul di bawah menara masjid sambil membayangkan impian mereka."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_2.jpg"
   },
   {
     "id": 3,
-    "title": "Cantik Itu Luka",
-    "author": "Eka Kurniawan",
-    "language": "Bahasa Indonesia",
-    "year": 2002,
-    "genre": "Literary Fiction",
-    "description": "Novel Cantik itu Luka karya Eka Kurniawan adalah sebuah karya sastra bergenre realisme magis yang menceritakan kisah keluarga dengan latar belakang sejarah Indonesia, terutama pada masa kolonial dan pasca-kemerdekaan. Novel ini menyoroti tema-tema seperti kecantikan, kekerasan, cinta, sejarah, dan mitos, dengan gaya penceritaan yang unik dan menggabungkan unsur-unsur surealisme.",
+    "title": {
+      "en": "Beauty is a Wound",
+      "id": "Cantik Itu Luka"
+    },
+    "author": {
+      "en": "Eka Kurniawan",
+      "id": "Eka Kurniawan"
+    },
+    "description": {
+      "en": "A magical realist novel that follows a family in post-colonial Indonesia, exploring beauty, violence, myth, and love.",
+      "id": "Novel Cantik itu Luka karya Eka Kurniawan adalah sebuah karya sastra bergenre realisme magis yang menceritakan kisah keluarga dengan latar belakang sejarah Indonesia, terutama pada masa kolonial dan pasca-kemerdekaan."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_3.jpg"
   },
   {
     "id": 4,
-    "title": "Mulai Mengerti",
-    "author": "Edward Suhadi",
-    "language": "Bahasa Indonesia",
-    "year": 2022,
-    "genre": "Motivational",
-    "description": "Buku ini berisi kumpulan tulisan pendek yang lahir dari kegelisahan dan pengamatan sehari-hari. Isinya tentang pemahaman bahwa hidup, meskipun terlihat acak dan tidak teratur, sebenarnya memiliki makna dan keteraturan tersendiri. Buku ini diterbitkan pada 1 Desember 2022.",
+    "title": {
+      "en": "Starting to Understand",
+      "id": "Mulai Mengerti"
+    },
+    "author": {
+      "en": "Edward Suhadi",
+      "id": "Edward Suhadi"
+    },
+    "description": {
+      "en": "A collection of short reflections about finding meaning in life, even when it seems chaotic.",
+      "id": "Buku ini berisi kumpulan tulisan pendek yang lahir dari kegelisahan dan pengamatan sehari-hari. Isinya tentang pemahaman bahwa hidup, meskipun terlihat acak dan tidak teratur, sebenarnya memiliki makna dan keteraturan tersendiri."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_4.jpg"
   },
   {
     "id": 5,
-    "title": "Ayat-Ayat Cinta",
-    "author": "Habiburrahman El Shirazy",
-    "language": "Bahasa Indonesia",
-    "year": 2004,
-    "genre": "Romance",
-    "description": "Novel Ayat-Ayat Cinta karya Habiburrahman El Shirazy menceritakan kisah cinta Fahri, seorang mahasiswa Indonesia di Kairo, yang dibalut dengan nilai-nilai Islami. Novel ini menyoroti bagaimana Fahri menghadapi berbagai ujian dalam percintaannya dengan latar belakang kehidupan di Mesir, serta bagaimana ia menjunjung tinggi nilai-nilai agama dalam setiap tindakannya.",
+    "title": {
+      "en": "Verses of Love",
+      "id": "Ayat-Ayat Cinta"
+    },
+    "author": {
+      "en": "Habiburrahman El Shirazy",
+      "id": "Habiburrahman El Shirazy"
+    },
+    "description": {
+      "en": "A romance novel about Fahri, an Indonesian student in Egypt, navigating love and faith.",
+      "id": "Novel Ayat-Ayat Cinta karya Habiburrahman El Shirazy menceritakan kisah cinta Fahri, seorang mahasiswa Indonesia di Kairo, yang dibalut dengan nilai-nilai Islami."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_5.jpg"
   },
   {
     "id": 6,
-    "title": "Educated",
-    "author": "Tara Westover",
-    "language": "English",
-    "year": 2018,
-    "genre": "Biography",
-    "description": "Educated is a powerful memoir by Tara Westover that chronicles her journey from a survivalist Mormon family in rural Idaho to earning a PhD from Cambridge University. The book explores themes of identity, family, and the transformative power of education. Westover's upbringing was marked by isolation, with no formal schooling and limited exposure to the outside world. She recounts her struggle to reconcile her desire for knowledge with the beliefs and values of her family.",
+    "title": {
+      "en": "Educated",
+      "id": "Educated"
+    },
+    "author": {
+      "en": "Tara Westover",
+      "id": "Tara Westover"
+    },
+    "description": {
+      "en": "Educated is a memoir by Tara Westover chronicling her journey from a survivalist upbringing in Idaho to earning a PhD at Cambridge.",
+      "id": "Educated adalah memoar Tara Westover yang menceritakan perjalanannya dari kehidupan keluarga Mormon yang ekstrem di Idaho hingga meraih gelar PhD dari Cambridge."
+    },
+    "bookLanguage": {
+      "en": "English",
+      "id": "Bahasa Inggris"
+    },
     "cover": "assets/img/book_6.jpg"
   },
   {
     "id": 7,
-    "title": "Pulang",
-    "author": "Toha Mohtar",
-    "language": "Bahasa Indonesia",
-    "year": 2012,
-    "genre": "Historical Fiction",
-    "description": "Pulang merupakan salah satu novel sastra karya Toha Mohtar. Novel ini menceritakan seorang anak manusia yang bernama Tamin yang pulang ke kampung halamannya setelah tujuh tahun pergi meninggalkan kampung halamannya untuk menjadi heiho. Di awal novel ini digambarkan tentang ingatan masa lalu Tamin akan masa kecilnya.",
+    "title": {
+      "en": "Returning Home",
+      "id": "Pulang"
+    },
+    "author": {
+      "en": "Toha Mohtar",
+      "id": "Toha Mohtar"
+    },
+    "description": {
+      "en": "A story about Tamin, a man who returns to his hometown after years of absence, reflecting on his past.",
+      "id": "Pulang merupakan salah satu novel sastra karya Toha Mohtar. Novel ini menceritakan seorang anak manusia yang bernama Tamin yang pulang ke kampung halamannya setelah tujuh tahun pergi menjadi heiho."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_7.jpg"
   },
   {
     "id": 8,
-    "title": "Filosofi Teras",
-    "author": "Henry Manampiring",
-    "language": "Bahasa Indonesia",
-    "year": 2018,
-    "genre": "Philosophy",
-    "description": "Filosofi Teras adalah buku yang ditulis oleh Henry Manampiring yang memperkenalkan filsafat Stoicisme dan bagaimana menerapkannya dalam kehidupan sehari-hari, terutama untuk menghadapi emosi negatif dan membangun ketahanan mental. Buku ini bertujuan membantu pembaca, terutama generasi muda, dalam menghadapi tantangan dan kecemasan hidup dengan lebih tenang dan bijaksana.",
+    "title": {
+      "en": "Stoic Philosophy",
+      "id": "Filosofi Teras"
+    },
+    "author": {
+      "en": "Henry Manampiring",
+      "id": "Henry Manampiring"
+    },
+    "description": {
+      "en": "A guide to Stoicism and how to apply it to modern life to improve emotional resilience.",
+      "id": "Filosofi Teras adalah buku yang ditulis oleh Henry Manampiring yang memperkenalkan filsafat Stoicisme dan bagaimana menerapkannya dalam kehidupan sehari-hari."
+    },
+    "bookLanguage": {
+      "en": "Bahasa Indonesia",
+      "id": "Bahasa Indonesia"
+    },
     "cover": "assets/img/book_8.jpg"
   },
   {
     "id": 9,
-    "title": "The Final Empire",
-    "author": "Brandon Sanderson",
-    "language": "English",
-    "year": 2006,
-    "genre": "Fantasy",
-    "description": "The Final Empire is the first novel in Brandon Sanderson's Mistborn trilogy, set in a dystopian world where an immortal tyrant known as the Lord Ruler has ruled for a thousand years. The story follows a group of rebels, led by the charismatic Kelsier and his apprentice Vin, who attempt to overthrow the Lord Ruler and his oppressive regime. The novel introduces a unique magic system called Allomancy, where individuals can gain supernatural abilities by consuming and burning metals.",
+    "title": {
+      "en": "The Final Empire",
+      "id": "The Final Empire"
+    },
+    "author": {
+      "en": "Brandon Sanderson",
+      "id": "Brandon Sanderson"
+    },
+    "description": {
+      "en": "A fantasy novel about rebels trying to overthrow an immortal tyrant in a world powered by metal-based magic.",
+      "id": "Sebuah novel fantasi tentang sekelompok pemberontak yang mencoba menggulingkan tiran abadi di dunia yang dikendalikan oleh sihir berbasis logam."
+    },
+    "bookLanguage": {
+      "en": "English",
+      "id": "Bahasa Inggris"
+    },
     "cover": "assets/img/book_9.jpg"
   },
   {
     "id": 10,
-    "title": "Digital Fortress",
-    "author": "Dan Brown",
-    "language": "English",
-    "year": 1998,
-    "genre": "Thriller",
-    "description": "Digital Fortress is a techno-thriller novel by Dan Brown, published in 1998, that explores themes of government surveillance, cryptography, and the ethical implications of technology. The story revolves around the NSA's supercomputer, TRANSLTR, encountering a seemingly unbreakable code called Digital Fortress, created by a former NSA employee, Ensei Tankado. Tankado's code threatens to expose the NSA's surveillance activities, leading to a race against time to crack the code and prevent a major security breach.",
+    "title": {
+      "en": "Digital Fortress",
+      "id": "Benteng Digital"
+    },
+    "author": {
+      "en": "Dan Brown",
+      "id": "Dan Brown"
+    },
+    "description": {
+      "en": "A techno-thriller about the NSA's supercomputer facing an unbreakable encryption that could expose government secrets.",
+      "id": "Sebuah novel techno-thriller tentang superkomputer NSA yang menghadapi enkripsi yang tidak dapat dipecahkan, mengancam akan membocorkan rahasia pemerintah."
+    },
+    "bookLanguage": {
+      "en": "English",
+      "id": "Bahasa Inggris"
+    },
     "cover": "assets/img/book_10.jpg"
   }
 ]

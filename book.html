@@ -25,61 +25,60 @@
   </main>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const bookId = params.get("id");
+  const params = new URLSearchParams(window.location.search);
+  const bookId = params.get("id");
+  const lang = localStorage.getItem("lang") || "en";
 
-    fetch("books.json")
-      .then(res => res.json())
-      .then(data => {
-        const book = data.find(b => b.id.toString() === bookId);
-        if (!book) {
-          document.getElementById("bookDetail").innerHTML = "<p>Book not found.</p>";
+  fetch("books.json")
+    .then(res => res.json())
+    .then(data => {
+      const book = data.find(b => b.id.toString() === bookId);
+      if (!book) {
+        document.getElementById("bookDetail").innerHTML = "<p>Book not found.</p>";
+        return;
+      }
+
+      document.getElementById("bookDetail").innerHTML = `
+        <img src="${book.cover}" alt="${book.title[lang]}" class="detail-cover"/>
+        <div class="detail-info">
+          <h2>${book.title[lang]}</h2>
+          <p><strong>Author:</strong> ${book.author[lang]}</p>
+          <p><strong>Description:</strong> ${book.description[lang]}</p>
+          <p><strong>Book Language:</strong> ${book.bookLanguage[lang]}</p>
+          <button id="borrowBtn">Borrow this book</button>
+          <button id="favBtn">❤️ Save to Favorites</button>
+          <a href="books.html" class="back-button">← Back to list</a>
+        </div>
+      `;
+
+      document.getElementById('borrowBtn').addEventListener('click', () => {
+        const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!currentUser) {
+          alert("Please log in to borrow books.");
+          window.location.href = 'login.html';
           return;
         }
 
-        document.getElementById("bookDetail").innerHTML = `
-          <img src="${book.cover}" alt="${book.title}" class="detail-cover" z/>
-          <div class="detail-info">
-            <h2>${book.title}</h2>
-            <p><strong>Author:</strong> ${book.author}</p>
-            <p><strong>Language:</strong> ${book.language || "Unknown"}</p>
-            <p><strong>Year:</strong> ${book.year || "Unknown"}</p>
-            <p><strong>Genre:</strong> ${book.genre || "N/A"}</p>
-            <p><strong>Description:</strong> ${book.description || "No description available."}</p>
-            <button id="borrowBtn">Borrow this book</button>
-            <button id="favBtn">❤️ Save to Favorites</button>
-            <a href="books.html" class="back-button">← Back to list</a>
-          </div>
-        `;
+        const borrowedBooks = JSON.parse(localStorage.getItem('borrowedBooks')) || [];
+        borrowedBooks.push({ user: currentUser.username, bookId: book.id, title: book.title[lang] });
+        localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+        alert(`You borrowed "${book.title[lang]}"`);
       });
-    
-    document.getElementById('borrowBtn').addEventListener('click', () => {
+
+      document.getElementById('favBtn').addEventListener('click', () => {
         const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
         if (!currentUser) {
-            alert("Please log in to borrow books.");
-            window.location.href = 'login.html';
-            return;
+          alert("Please log in to favorite books.");
+          return;
         }
 
-    const borrowedBooks = JSON.parse(localStorage.getItem('borrowedBooks')) || [];
-    borrowedBooks.push({ user: currentUser.username, bookId: book.id, title: book.title });
-    localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
-    alert(`You borrowed "${book.title}"`);
-});
-
-    document.getElementById('favBtn').addEventListener('click', () => {
-        const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
-        if (!currentUser) {
-            alert("Please log in to favorite books.");
-            return;
-        }
-
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.push({ user: currentUser.username, bookId: book.id });
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    alert("Added to favorites!");
-});   
-  </script>
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        favorites.push({ user: currentUser.username, bookId: book.id });
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert("Added to favorites!");
+      });
+    });
+</script>
   
   <script>
   const translations = {
@@ -112,12 +111,42 @@
   }
 
   document.getElementById("lang-toggle").addEventListener("click", () => {
-    const newLang = currentLang === "en" ? "id" : "en";
-    updateLanguage(newLang);
-  });
+  const newLang = currentLang === "en" ? "id" : "en";
+  localStorage.setItem("lang", newLang);
+  location.reload();
+});
 
   // Initial language setup
   updateLanguage(currentLang);
+</script>
+
+<script>
+  // Example function triggered by the language switch button
+function toggleLanguage() {
+  const currentLang = localStorage.getItem("lang") || "en";
+  const newLang = currentLang === "en" ? "id" : "en";
+  localStorage.setItem("lang", newLang);
+  location.reload(); // Reload to update content
+}
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const bookId = parseInt(urlParams.get("id"));
+  const lang = localStorage.getItem("lang") || "en";
+
+  const res = await fetch("books.json");
+  const books = await res.json();
+  const book = books.find(b => b.id === bookId);
+
+  if (book) {
+    document.getElementById("book-title").textContent = book.title[lang];
+    document.getElementById("book-author").textContent = book.author[lang];
+    document.getElementById("book-description").textContent = book.description[lang];
+    document.getElementById("book-cover").src = book.cover;
+  }
+});
 </script>
 
   <script src="js/script.js"></script>
