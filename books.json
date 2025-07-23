@@ -198,5 +198,205 @@
       "id": "Bahasa Inggris"
     },
     "cover": "assets/img/book_10.jpg"
+  },
+  {
+    "id": 11,
+    "title": {
+      "en": "Echoes of Tomorrow",
+      "id": "Gema Esok Hari"
+    },
+    "author": {
+      "en": "Marvin Merritt II",
+      "id": "Marvin Merritt II"
+    },
+    "description": {
+      "en": "Echoes of Tomorrow is a science fiction novel, often described as a dystopian thriller or a story of resilience and revolution, that explores themes of truth, autonomy, and the fight against oppressive powers. The story typically involves futuristic settings, like a city controlled by an AI regime, where a protagonist stumbles upon a secret that could dismantle the oppressive system. Characters often lead a rebellion, inspiring others to challenge their reality and fight for freedom.",
+      "id": "Echoes of Tomorrow adalah novel fiksi ilmiah, yang sering digambarkan sebagai thriller distopia atau kisah tentang ketahanan dan revolusi, yang mengeksplorasi tema-tema kebenaran, otonomi, dan perjuangan melawan kekuatan-kekuatan yang menindas. Kisah ini biasanya berlatar futuristik, seperti kota yang dikuasai rezim AI, di mana seorang protagonis menemukan rahasia yang dapat membongkar sistem yang menindas. Tokoh-tokohnya sering kali memimpin pemberontakan, menginspirasi orang lain untuk menantang realitas mereka dan memperjuangkan kebebasan."
+    },
+    "bookLanguage": {
+      "en": "English",
+      "id": "Bahasa Inggris"
+    },
+    "cover": "assets/img/book_11.jpg"
+  },
+  {
+    "id": 12,
+    "title": {
+      "en": "Five Finger Guide",
+      "id": "Panduan Lima Jari"
+    },
+    "author": {
+      "en": "Edward Suhadi",
+      "id": "Edward Suhadi"
+    },
+    "description": {
+      "en": "The Five Finger Guide is a book and concept developed by Edward Suhadi, which uses the analogy of five fingers to represent guiding principles for life. The book, a collection of writings from Edward's various channels, groups the stories based on the values represented by each finger.",
+      "id": "Panduan Lima Jari adalah sebuah buku dan juga konsep yang dikembangkan oleh Edward Suhadi yang menggunakan analogi lima jari tangan untuk merepresentasikan prinsip-prinsip panduan hidup. Buku ini, yang merupakan kumpulan tulisan dari berbagai kanal Edward, mengelompokkan cerita-cerita berdasarkan nilai-nilai yang diwakili oleh masing-masing jari."
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_12.jpg"
+  },
+  {
+    "id": 13,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 14,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 15,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 16,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 17,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 18,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 19,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
+  },
+  {
+    "id": 20,
+    "title": {
+      "en": "",
+      "id": ""
+    },
+    "author": {
+      "en": "",
+      "id": ""
+    },
+    "description": {
+      "en": "",
+      "id": ""
+    },
+    "bookLanguage": {
+      "en": "",
+      "id": ""
+    },
+    "cover": "assets/img/book_1.png"
   }
 ]
