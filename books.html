@@ -93,7 +93,7 @@
   </header>
 
   <main>
-    <input type="text" id="searchInput" placeholder="Search by title or author..." />
+    <input type="text" id="searchInput" data-i18n-placeholder="search_placeholder" />
 
     <div class="sort-container">
       <label for="sortSelect">Sort by:</label>
@@ -113,84 +113,6 @@
   </footer>
 
   <script>
-    let allBooks = [];
-
-    function renderBooks(filteredBooks) {
-  const bookList = document.getElementById('bookList');
-  bookList.innerHTML = '';
-  filteredBooks.forEach(book => {
-    const title = typeof book.title === 'object' ? book.title[currentLang] : book.title;
-    const language = book.language || (currentLang === 'en' ? "Unknown" : "Tidak diketahui");
-    
-    const card = document.createElement('div');
-    card.className = 'book-card';
-    card.innerHTML = `
-      <a href="book.html?id=${book.id}" class="book-link">
-        <img src="${book.cover}" alt="${title}" />
-        <h3>${title}</h3>
-        <p><em>${book.author}</em></p>
-        <p style="font-size: 0.9em;">${currentLang === 'en' ? "Language" : "Bahasa"}: ${language}</p>
-      </a>
-    `;
-    bookList.appendChild(card);
-  });
-}
-
-    function sortBooks(books, method) {
-  return books.slice().sort((a, b) => {
-    const titleA = typeof a.title === 'object' ? a.title[currentLang] : a.title;
-    const titleB = typeof b.title === 'object' ? b.title[currentLang] : b.title;
-
-    if (method === 'az') {
-      return titleA.localeCompare(titleB);
-    } else {
-      return titleB.localeCompare(titleA);
-    }
-  });
-}
-
-    fetch('books.json')
-      .then(response => response.json())
-      .then(books => {
-        allBooks = books;
-
-        const searchInput = document.getElementById('searchInput');
-        const sortSelect = document.getElementById('sortSelect');
-
-        function updateDisplayedBooks() {
-  const keyword = searchInput.value.toLowerCase();
-  const filtered = allBooks.filter(book => {
-    const title = typeof book.title === 'object' ? book.title[currentLang] : book.title;
-    return title.toLowerCase().includes(keyword) ||
-           book.author.toLowerCase().includes(keyword);
-  });
-  const sorted = sortBooks(filtered, sortSelect.value);
-  renderBooks(sorted);
-}
-
-        searchInput.addEventListener('input', updateDisplayedBooks);
-        sortSelect.addEventListener('change', updateDisplayedBooks);
-
-        updateDisplayedBooks(); // initial display
-      })
-      .catch(error => {
-        document.getElementById('bookList').innerHTML = "<p>Failed to load books.</p>";
-        console.error(error);
-      });
-  </script>
-
-  <script>
-    // Highlight the current nav link
-    const currentPage = window.location.pathname.split("/").pop();
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  </script>
-
-  <script>
   const translations = {
     en: {
       title: "📚 Bookoria Library",
@@ -198,6 +120,8 @@
       nav_main: "Home",
       nav_about: "About",
       nav_contact: "Contact",
+      language: "Language",
+      search_placeholder: "Search by title or author..."
     },
     id: {
       title: "📚 Perpustakaan Bookoria",
@@ -205,10 +129,19 @@
       nav_main: "Beranda",
       nav_about: "Tentang",
       nav_contact: "Kontak",
+      language: "Bahasa",
+      search_placeholder: "Cari berdasarkan judul atau penulis..."
     }
   };
 
   let currentLang = "en";
+    if (localStorage.getItem("lang")) {
+      currentLang = localStorage.getItem("lang");
+    } else {
+      localStorage.setItem("lang", currentLang);
+    }
+
+  let allBooks = [];
 
   function updateLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -216,22 +149,101 @@
     el.textContent = translations[lang][key];
   });
 
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    el.placeholder = translations[lang][key];
+  });
+
   document.getElementById("lang-toggle").textContent = lang === "en" ? "Bahasa Indonesia" : "English";
   currentLang = lang;
 
-  // Rerender buku setelah bahasa diganti
-  if (typeof updateDisplayedBooks === "function") {
-    updateDisplayedBooks();
-  }
+  updateDisplayedBooks(); // rerender books
 }
 
+
+  function renderBooks(books) {
+    const container = document.getElementById("bookList");
+    container.innerHTML = "";
+
+    books.forEach(book => {
+      const title = book.title?.[currentLang] || "Untitled";
+      const author = book.author?.[currentLang] || "Unknown Author";
+      const language = book.bookLanguage?.[currentLang] || (currentLang === "en" ? "Unknown" : "Tidak diketahui");
+
+      const card = document.createElement("div");
+      card.className = "book-card";
+      card.innerHTML = `
+        <a href="book.html?id=${book.id}" class="book-link">
+          <img src="${book.cover}" alt="${title}" />
+          <h3>${title}</h3>
+          <p><em>${author}</em></p>
+          <p style="font-size: 0.9em;">${translations[currentLang].language}: ${language}</p>
+        </a>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function getFilteredAndSortedBooks() {
+    const searchValue = document.getElementById("searchInput").value.toLowerCase();
+    const sortOption = document.getElementById("sortSelect").value;
+
+    let filtered = allBooks.filter(book => {
+      const title = book.title?.[currentLang]?.toLowerCase() || "";
+      const author = book.author?.[currentLang]?.toLowerCase() || "";
+      return title.includes(searchValue) || author.includes(searchValue);
+    });
+
+    filtered.sort((a, b) => {
+      const titleA = a.title?.[currentLang] || "";
+      const titleB = b.title?.[currentLang] || "";
+      return sortOption === "az"
+        ? titleA.localeCompare(titleB)
+        : titleB.localeCompare(titleA);
+    });
+
+    return filtered;
+  }
+
+  function updateDisplayedBooks() {
+    const books = getFilteredAndSortedBooks();
+    renderBooks(books);
+  }
+
+  // Fetch data & setup event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize language from localStorage or default to 'en'
+  currentLang = localStorage.getItem("lang") || "en";
+  localStorage.setItem("lang", currentLang);
+
+  fetch("books.json")
+    .then(res => res.json())
+    .then(data => {
+      allBooks = data;
+      updateLanguage(currentLang); // Pass lang explicitly
+      updateDisplayedBooks();
+    })
+    .catch(err => {
+      document.getElementById("bookList").innerHTML = "<p>Failed to load books.</p>";
+      console.error(err);
+    });
+
+  document.getElementById("searchInput").addEventListener("input", updateDisplayedBooks);
+  document.getElementById("sortSelect").addEventListener("change", updateDisplayedBooks);
   document.getElementById("lang-toggle").addEventListener("click", () => {
     const newLang = currentLang === "en" ? "id" : "en";
+    localStorage.setItem("lang", newLang);
     updateLanguage(newLang);
   });
 
-  // Initial language setup
-  updateLanguage(currentLang);
+  // Highlight nav
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
 </script>
 
   <script src="js/script.js"></script>

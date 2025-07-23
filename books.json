@@ -34,7 +34,7 @@
       "id": "Novel Negeri 5 Menara karya Ahmad Fuadi menceritakan kisah perjalanan Alif, seorang santri dari Maninjau, Sumatera Barat, yang menuntut ilmu di Pondok Madani, Ponorogo, Jawa Timur. Di pesantren, Alif bersama lima temannya, yang dikenal sebagai 'Sahibul Menara', memiliki kebiasaan berkumpul di bawah menara masjid sambil membayangkan impian mereka."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_2.jpg"
@@ -54,7 +54,7 @@
       "id": "Novel Cantik itu Luka karya Eka Kurniawan adalah sebuah karya sastra bergenre realisme magis yang menceritakan kisah keluarga dengan latar belakang sejarah Indonesia, terutama pada masa kolonial dan pasca-kemerdekaan."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_3.jpg"
@@ -74,7 +74,7 @@
       "id": "Buku ini berisi kumpulan tulisan pendek yang lahir dari kegelisahan dan pengamatan sehari-hari. Isinya tentang pemahaman bahwa hidup, meskipun terlihat acak dan tidak teratur, sebenarnya memiliki makna dan keteraturan tersendiri."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_4.jpg"
@@ -94,7 +94,7 @@
       "id": "Novel Ayat-Ayat Cinta karya Habiburrahman El Shirazy menceritakan kisah cinta Fahri, seorang mahasiswa Indonesia di Kairo, yang dibalut dengan nilai-nilai Islami."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_5.jpg"
@@ -103,7 +103,7 @@
     "id": 6,
     "title": {
       "en": "Educated",
-      "id": "Educated"
+      "id": "Berpendidikan"
     },
     "author": {
       "en": "Tara Westover",
@@ -134,7 +134,7 @@
       "id": "Pulang merupakan salah satu novel sastra karya Toha Mohtar. Novel ini menceritakan seorang anak manusia yang bernama Tamin yang pulang ke kampung halamannya setelah tujuh tahun pergi menjadi heiho."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_7.jpg"
@@ -154,7 +154,7 @@
       "id": "Filosofi Teras adalah buku yang ditulis oleh Henry Manampiring yang memperkenalkan filsafat Stoicisme dan bagaimana menerapkannya dalam kehidupan sehari-hari."
     },
     "bookLanguage": {
-      "en": "Bahasa Indonesia",
+      "en": "Indonesian",
       "id": "Bahasa Indonesia"
     },
     "cover": "assets/img/book_8.jpg"
@@ -163,7 +163,7 @@
     "id": 9,
     "title": {
       "en": "The Final Empire",
-      "id": "The Final Empire"
+      "id": "Kerajaan Terakhir"
     },
     "author": {
       "en": "Brandon Sanderson",
