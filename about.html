@@ -64,18 +64,18 @@
   </header>
 
   <main>
-    <h2>About Bookoria</h2>
-    <p>
+    <h2 data-i18n="about_title">About Bookoria</h2>
+    <p data-i18n="about_p1">
       Bookoria is a simple digital library system designed to make reading easier and more accessible
       for everyone. Whether you're looking for popular international bestsellers or inspiring Indonesian literature,
       Bookoria lets you browse, search, and manage books efficiently.
     </p>
-    <p>
+    <p data-i18n="about_p2">
       Currently, I'm 17 years old and this is my first ever working website. This project was created
       as a beginner-friendly web development exercise to practice HTML, CSS, JavaScript,
       and JSON data handling. It also supports user login and book management features.
     </p>
-    <p>
+    <p data-i18n="about_p3">
       I aim to grow this platform into a more complete digital library system prototype that supports user borrowing,
       personalized recommendations, and more.
     </p>
@@ -100,21 +100,30 @@
 
   <script>
   const translations = {
-    en: {
-      title: "📚 Bookoria Library",
-      nav_books: "Books",
-      nav_main: "Home",
-      nav_about: "About",
-      nav_contact: "Contact",
-    },
-    id: {
-      title: "📚 Perpustakaan Bookoria",
-      nav_books: "Buku",
-      nav_main: "Beranda",
-      nav_about: "Tentang",
-      nav_contact: "Kontak",
-    }
-  };
+  en: {
+    title: "📚 Bookoria Library",
+    nav_books: "Books",
+    nav_main: "Home",
+    nav_about: "About",
+    nav_contact: "Contact",
+    about_title: "About Bookoria",
+    about_p1: "Bookoria is a simple digital library system designed to make reading easier and more accessible for everyone. Whether you're looking for popular international bestsellers or inspiring Indonesian literature, Bookoria lets you browse, search, and manage books efficiently.",
+    about_p2: "Currently, I'm 17 years old and this is my first ever working website. This project was created as a beginner-friendly web development exercise to practice HTML, CSS, JavaScript, and JSON data handling. It also supports user login and book management features.",
+    about_p3: "I aim to grow this platform into a more complete digital library system prototype that supports user borrowing, personalized recommendations, and more."
+  },
+  id: {
+    title: "📚 Perpustakaan Bookoria",
+    nav_books: "Buku",
+    nav_main: "Beranda",
+    nav_about: "Tentang",
+    nav_contact: "Kontak",
+    about_title: "Tentang Bookoria",
+    about_p1: "Bookoria adalah sistem perpustakaan digital sederhana yang dirancang untuk membuat membaca lebih mudah dan dapat diakses oleh semua orang. Baik Anda mencari buku terlaris internasional maupun sastra Indonesia yang menginspirasi, Bookoria memungkinkan Anda menelusuri, mencari, dan mengelola buku dengan efisien.",
+    about_p2: "Saat ini saya berusia 17 tahun dan ini adalah situs web kerja pertama saya. Proyek ini dibuat sebagai latihan pengembangan web pemula yang ramah untuk mempraktikkan HTML, CSS, JavaScript, dan pengelolaan data JSON. Ini juga mendukung fitur login pengguna dan manajemen buku.",
+    about_p3: "Saya ingin mengembangkan platform ini menjadi prototipe sistem perpustakaan digital yang lebih lengkap yang mendukung peminjaman pengguna, rekomendasi yang dipersonalisasi, dan lainnya."
+  }
+};
+
 
   let currentLang = "en";
 

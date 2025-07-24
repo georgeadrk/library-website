@@ -92,12 +92,12 @@
   </header>
 
   <main>
-    <h2>Contact Me</h2>
+    <h2 data-i18n="contact_title">Contact Me</h2>
     <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <input type="text" name="name" placeholder="Your Name" required data-i18n-placeholder="name_placeholder" />
+      <input type="email" name="email" placeholder="Your Email" required data-i18n-placeholder="email_placeholder" />
+      <textarea name="message" placeholder="Your Message" required data-i18n-placeholder="msg_placeholder"></textarea>
+      <button type="submit" data-i18n="send_btn">Send Message</button>
     </form>
     <p id="formMessage" style="text-align:center; margin-top:10px;"></p>
   </main>
@@ -137,6 +137,11 @@
       nav_main: "Home",
       nav_about: "About",
       nav_contact: "Contact",
+      contact_title: "Contact Me",
+      name_placeholder: "Your Name",
+      email_placeholder: "Your Email",
+      msg_placeholder: "Your Message",
+      send_btn: "Send Message",
     },
     id: {
       title: "📚 Perpustakaan Bookoria",
@@ -144,6 +149,11 @@
       nav_main: "Beranda",
       nav_about: "Tentang",
       nav_contact: "Kontak",
+      contact_title: "Hubungi Saya",
+      name_placeholder: "Nama Anda",
+      email_placeholder: "Email Anda",
+      msg_placeholder: "Pesan Anda",
+      send_btn: "Kirim Pesan",
     }
   };
 
@@ -163,6 +173,11 @@
     const newLang = currentLang === "en" ? "id" : "en";
     updateLanguage(newLang);
   });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+  const key = el.getAttribute("data-i18n-placeholder");
+  el.placeholder = translations[lang][key];
+});
 
   // Initial language setup
   updateLanguage(currentLang);
