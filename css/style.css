@@ -63,7 +63,22 @@ footer {
 }
 
 /* Buttons */
-button,
+button{
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-bottom: 1rem;
+  margin-right: 20px;
+}
+
 .cta-button {
   display: inline-block;
   background-color: #007bff;
@@ -73,12 +88,17 @@ button,
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-button:hover,
+button:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
 .cta-button:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
+  text-decoration: none;
 }
 
 /* Forms */
