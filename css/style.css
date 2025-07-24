@@ -252,14 +252,16 @@ form {
 }
 
 .lang-button {
-  background-color: transparent;
+  background: none;
   border: none;
-  color: white;
+  color: #ffffff;
+  font: inherit;
+  padding: 0;
+  margin: 0 10px;
+  line-height: 1;
   cursor: pointer;
-  font-size: 1em;
-  margin-left: 1em;
-  padding: 0.5em 1em;
-  outline: none;
+  display: inline-block;
+  vertical-align: middle;
   transition: transform 0.2s ease;
 }
 
@@ -268,6 +270,13 @@ form {
   outline: none;
   box-shadow: none;
   transform: scale(1.1);
-  color: #ffc107;
+  color: #569dff;
   text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav-link {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }
