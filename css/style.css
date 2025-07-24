@@ -33,7 +33,11 @@ header {
 }
 
 nav {
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 10px;
 }
 
 nav a {
