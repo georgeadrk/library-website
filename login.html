@@ -89,8 +89,18 @@
       <a href="books.html" class="nav-link" data-i18n="nav_books">Books</a> |
       <a href="about.html" class="nav-link" data-i18n="nav_about">About</a> |
       <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
-      <button id="lang-toggle" class="lang-button">English</button>
-      <span id="auth-links" style="margin-left: 20px;"></span>
+
+      <button id="lang-toggle" class="lang-button" style="margin-left: 30px;">English</button>
+
+      <span id="auth-guest" style="margin-left: 20px;">
+        <a href="login.html">Login</a> |
+        <a href="register.html">Register</a>
+      </span>
+
+      <span id="auth-user" style="margin-left: 20px; display: none;">
+      <span id="user-greeting"></span>
+      <button id="logout-btn" class="logout-button">Logout</button>
+      </span>
     </nav>
   </header>
 
