@@ -110,33 +110,36 @@
   </footer>
 
   <script>
-    const form = document.getElementById("loginForm");
-    const message = document.getElementById("message");
+  const form = document.getElementById("loginForm");
+  const message = document.getElementById("message");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      const email = form.email.value.trim();
-      const password = form.password.value;
+    const email = form.email.value.trim();
+    const password = form.password.value;
 
-      const users = JSON.parse(localStorage.getItem("bookoria_users") || "[]");
-      const user = users.find(u => u.email === email && u.password === password);
+    const users = JSON.parse(localStorage.getItem("bookoria_users") || "[]");
+    const user = users.find(u => u.email === email && u.password === password);
 
-      if (user) {
-        localStorage.setItem("bookoria_logged_in", JSON.stringify(user));
-        message.style.color = "green";
-        message.textContent = "Login successful! Redirecting...";
+    if (user) {
+  localStorage.setItem("bookoria_logged_in", JSON.stringify(user));
+  message.style.color = "green";
+  message.textContent = "Login successful! Redirecting...";
 
-        // Redirect to homepage or dashboard
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1000);
-      } else {
-        message.style.color = "red";
-        message.textContent = "Invalid email or password.";
-      }
-    });
-  </script>
+  setTimeout(() => {
+    if (user.role === "owner") {
+      window.location.href = "admin.html";
+    } else {
+      window.location.href = "index.html";
+    }
+  }, 1000);
+} else {
+  message.style.color = "red";
+  message.textContent = "Invalid email or password.";
+}
+  });
+</script>
 
   <script>
     // Highlight the current nav link

@@ -93,6 +93,27 @@
         link.classList.add("active");
       }
     });
+
+    const loggedInUser = JSON.parse(localStorage.getItem("bookoria_logged_in"));
+
+if (loggedInUser) {
+  const authLinks = document.getElementById("auth-links");
+
+  // Common UI for all users
+  authLinks.innerHTML = `
+    <span>Welcome, ${loggedInUser.name}!</span>
+    <button onclick="logout()">Logout</button>
+  `;
+
+  // Show owner-specific link
+  if (loggedInUser.role === "owner") {
+    const ownerLink = document.createElement("a");
+    ownerLink.href = "admin.html"; // Create this page
+    ownerLink.textContent = "Admin Panel";
+    ownerLink.style.marginLeft = "10px";
+    authLinks.appendChild(ownerLink);
+  }
+}
   </script>
 
   <script>

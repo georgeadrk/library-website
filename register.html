@@ -137,7 +137,7 @@
         return;
       }
 
-      users.push({ username, email, password });
+      users.push({ name: username, email, password });
       localStorage.setItem("bookoria_users", JSON.stringify(users));
 
       message.textContent = "Registration successful! You can now log in.";

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Bookoria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #f4f4f4;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-left: 5px solid #007bff;
+    }
+    .logout-btn {
+      margin-top: 20px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <p>List of all registered users:</p>
+  <ul id="userList"></ul>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+
+  <script>
+    // Check if user is owner
+    const currentUser = JSON.parse(localStorage.getItem("bookoria_logged_in"));
+    if (!currentUser || currentUser.role !== "owner") {
+      alert("Access denied.");
+      window.location.href = "index.html";
+    }
+
+    // Load and display users
+    const users = JSON.parse(localStorage.getItem("bookoria_users") || "[]");
+    const userList = document.getElementById("userList");
+
+    users.forEach(user => {
+      const li = document.createElement("li");
+      li.textContent = `${user.name || "No name"} (${user.email}) - ${user.role || "user"}`;
+      userList.appendChild(li);
+    });
+
+    function logout() {
+      localStorage.removeItem("bookoria_logged_in");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
