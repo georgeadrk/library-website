@@ -67,7 +67,7 @@ footer {
 }
 
 /* Buttons */
-button{
+button:not(.logout-button) {
   display: inline-block;
   background-color: #007bff;
   color: white;
@@ -279,4 +279,20 @@ form {
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
+}
+
+.logout-button {
+  padding: 4px 8px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.logout-button:hover {
+  transform: scale(1.05);
 }
