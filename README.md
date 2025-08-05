@@ -43,6 +43,10 @@ Toggle between **English** and **Bahasa Indonesia** using the button in the navi
 2. Open `index.html` in a web browser.
 3. Navigate through the site using the nav bar.
 
+or
+
+1. Open `georgeadrk.github.io/library-website`.
+
 ## 🛠️ Tech Stack
 
 - HTML5
